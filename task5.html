@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use strict'
+        let a = parseInt(prompt("введите значение a"));
+        let b = parseInt(prompt("введите значение b"));
+        let c = ""
+        let x = prompt("введите перацию + - * /")
+        function summ() {
+            let d = a + b
+            return d;
+        };
+        function diff() {
+            let d = a - b
+            return d;
+        };
+        function mult() {
+            let d = a * b
+            return d;
+        };
+        function div() {
+            let d = a / b
+            return d;
+        };
+        switch (x) {
+            case "+":
+                c = summ(a, b, x);
+                alert("сумма = " + c);
+                break;
+            case "-":
+                c = diff(a, b, x);
+                alert("разность = " + c);
+                break;
+            case "*":
+                c = mult(a, b, x);
+                alert("умножение = " + c);
+                break;
+            case "/":
+                c = div(a, b, x);
+                alert("деление = " + c);
+                break;
+        }
+
+    </script>
+</body>
+
+</html>
