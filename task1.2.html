@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        //es5
+
+        /*  function Post(author, text, date) {
+              this.author = author;
+              this.text = text;
+              this.date = date;
+          }
+  
+          Post.prototype.edit = function () {
+              this.text = prompt('enter text');
+              console.log(this)
+          }
+  
+          function AttachedPost(author, text, date, highlighted) {
+              Post.call(this, author, text, date);
+              this.highlighted = false;
+          }
+  
+          AttachedPost.prototype = Object.create(Post.prototype);
+          AttachedPost.constructor = AttachedPost;
+          AttachedPost.prototype.makeTextHighlited = function () {
+              this.highlighted = true;
+              console.log(this);
+          }
+  
+          let book = new AttachedPost('me', ' ', '01.03.3011');
+          book.edit();
+          book.makeTextHighlited(); */
+
+        //es6
+
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit() {
+                this.text = prompt('enter text');
+                console.log(this)
+            }
+        }
+
+        class AttachedPost extends Post {
+            constructor(author, text, date, highlighted) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+            makeTextHighlited() {
+                this.highlighted = true;
+                console.log(this);
+            }
+
+        }
+
+        let book = new AttachedPost('me', ' ', '01.03.3011');
+        book.edit();
+        book.makeTextHighlited();
+
+    </script>
+</body>
+
+</html>
